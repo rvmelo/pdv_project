@@ -1,0 +1,8 @@
+Para o svg funcionar comentar as linhas:
+
+import com.horcrux.svg.SvgPackage;
+packages.add(new SvgPackage());
+
+Essas linhas vc adiciona seguindo a documentação da biblioteca no github
+
+https://github.com/react-native-community/react-native-svg/issues/1043
