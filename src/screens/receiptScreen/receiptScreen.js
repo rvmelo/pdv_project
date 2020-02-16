@@ -1,7 +1,5 @@
 import React from 'react';
-import {View, ImageBackground, Text} from 'react-native';
 import ICLogo from '../../../assets/Icones/ic_logo.svg';
-import {fonts} from '../../theme/fonts/fonts';
 import {
   EmptySpace,
   StyledLinearGradient,
@@ -15,7 +13,7 @@ import {
   DateDisplay,
 } from './styles/styles';
 
-export default function ReceiptScreen({paymentOption}) {
+export default function ReceiptScreen({value, option, date}) {
   return (
     <StyledLinearGradient>
       <StyledBackground>
@@ -27,11 +25,11 @@ export default function ReceiptScreen({paymentOption}) {
         <ReceiptText>Número 64</ReceiptText>
 
         <PriceContainer>
-          <Price>R$30,00</Price>
+          <Price>R${value}</Price>
         </PriceContainer>
-        <PaymentDisplay>{paymentOption}</PaymentDisplay>
+        <PaymentDisplay>{option}</PaymentDisplay>
         <DateContainer>
-          <DateDisplay>05/10/2019 18:00:00</DateDisplay>
+          <DateDisplay>{date}</DateDisplay>
         </DateContainer>
       </StyledBackground>
     </StyledLinearGradient>

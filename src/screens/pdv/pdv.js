@@ -7,16 +7,41 @@ import ReceiptScreen from '../receiptScreen/receiptScreen';
 
 export default function PDV() {
   const [displayReceipt, setDisplayReceipt] = useState(false);
-  const [paymentOption, setPaymentOption] = useState('');
+  const [payment, setPayment] = useState({value: '0,00', option: '', date: ''});
 
-  const handleReceiptDisplay = useCallback(option => {
-    setDisplayReceipt(true);
-    setPaymentOption(option);
-  }, []);
+  const handleReceiptDisplay = useCallback(
+    option => {
+      const today = new Date();
+      const date =
+        today.getDate() +
+        '/' +
+        (today.getMonth() + 1) +
+        '/' +
+        today.getFullYear() +
+        ' ' +
+        today.getHours() +
+        ':' +
+        today.getMinutes() +
+        ':' +
+        today.getSeconds();
+
+      setDisplayReceipt(true);
+      setPayment({value: payment.value, option: option, date: date});
+    },
+    [payment.value],
+  );
 
   return displayReceipt ? (
-    <ReceiptScreen paymentOption={paymentOption} />
+    <ReceiptScreen
+      value={payment.value}
+      option={payment.option}
+      date={payment.date}
+    />
   ) : (
-    <PaymentScreen handleReceiptDisplay={handleReceiptDisplay} />
+    <PaymentScreen
+      value={payment.value}
+      handleReceiptDisplay={handleReceiptDisplay}
+      setValue={setPayment}
+    />
   );
 }
