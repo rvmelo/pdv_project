@@ -11,11 +11,24 @@ import {
   DateContainer,
   PaymentDisplay,
   DateDisplay,
+  HeaderText,
+  StyledButton,
+  ButtonText,
+  ButtonContainer,
+  BackButton,
+  BackImage,
+  HeaderContainer,
 } from './styles/styles';
 
 export default function ReceiptScreen({value, option, date}) {
   return (
     <StyledLinearGradient>
+      <HeaderContainer>
+        <BackButton>
+          <BackImage />
+        </BackButton>
+        <HeaderText>PAGAMENTO REALIZADO COM SUCESSO</HeaderText>
+      </HeaderContainer>
       <StyledBackground>
         <EmptySpace />
         <ICLogo width="50%" height="20%" />
@@ -32,6 +45,11 @@ export default function ReceiptScreen({value, option, date}) {
           <DateDisplay>{date}</DateDisplay>
         </DateContainer>
       </StyledBackground>
+      <ButtonContainer>
+        <StyledButton>
+          <ButtonText>CONFIRMAR</ButtonText>
+        </StyledButton>
+      </ButtonContainer>
     </StyledLinearGradient>
   );
 }

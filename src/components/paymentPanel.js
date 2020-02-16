@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {memo} from 'react';
 
 import {
   PanelContainer,
   OptionsContainer,
   SwiperComponent,
   SwiperContainer,
+  IconContainer,
+  IconTitle,
 } from '../styles/styles';
 import Swiper from 'react-native-swiper';
 
@@ -14,46 +16,60 @@ import ICDebit from '../../assets/Icones/ic_debit.svg';
 import ICMoney from '../../assets/Icones/ic_money.svg';
 import ICVR from '../../assets/Icones/ic_vr.svg';
 
-export default function PaymentPanel({handleReceiptDisplay}) {
+function PaymentPanel({handleReceiptDisplay}) {
   return (
     <PanelContainer>
       <SwiperContainer>
         <SwiperComponent>
-          <ICMoney
-            width="20%"
-            height="20%"
-            onPress={() => {
-              handleReceiptDisplay('Dinheiro');
-            }}
-          />
-
-          <ICDebit
-            width="20%"
-            height="20%"
-            onPress={() => handleReceiptDisplay('Débito')}
-          />
-
-          <ICCredit
-            width="20%"
-            height="20%"
-            onPress={() => handleReceiptDisplay('Crédito')}
-          />
+          <IconContainer>
+            <ICMoney
+              width="30%"
+              height="30%"
+              onPress={() => {
+                handleReceiptDisplay('Dinheiro');
+              }}
+            />
+            <IconTitle>DINHEIRO</IconTitle>
+          </IconContainer>
+          <IconContainer>
+            <ICDebit
+              width="30%"
+              height="30%"
+              onPress={() => handleReceiptDisplay('Débito')}
+            />
+            <IconTitle>DÉBITO</IconTitle>
+          </IconContainer>
+          <IconContainer>
+            <ICCredit
+              width="30%"
+              height="30%"
+              onPress={() => handleReceiptDisplay('Crédito')}
+            />
+            <IconTitle>CRÉDITO</IconTitle>
+          </IconContainer>
         </SwiperComponent>
 
         <SwiperComponent>
-          <ICCupom
-            width="20%"
-            height="20%"
-            onPress={() => handleReceiptDisplay('Cupom')}
-          />
-
-          <ICVR
-            width="20%"
-            height="20%"
-            onPress={() => handleReceiptDisplay('V.R.')}
-          />
+          <IconContainer>
+            <ICCupom
+              width="30%"
+              height="30%"
+              onPress={() => handleReceiptDisplay('Cupom')}
+            />
+            <IconTitle>CUPOM</IconTitle>
+          </IconContainer>
+          <IconContainer>
+            <ICVR
+              width="30%"
+              height="30%"
+              onPress={() => handleReceiptDisplay('V.R.')}
+            />
+            <IconTitle>V.R.</IconTitle>
+          </IconContainer>
         </SwiperComponent>
       </SwiperContainer>
     </PanelContainer>
   );
 }
+
+export default memo(PaymentPanel);

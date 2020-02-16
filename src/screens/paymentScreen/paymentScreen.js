@@ -12,13 +12,19 @@ import {Text} from 'react-native';
 import CustomKeyboard from '../../components/customKeyboard';
 import PaymentPanel from '../../components/paymentPanel';
 
-import {PriceDisplay, PaymentBackground} from './styles/styles';
+import {
+  PriceDisplay,
+  Price,
+  Subtitle,
+  PaymentBackground,
+} from './styles/styles';
 
 const PaymentScreen = ({handleReceiptDisplay, value, setValue}) => {
   return (
     <PaymentBackground>
       <PriceDisplay>
-        <Text>R$ {value}</Text>
+        <Price>R$ {value}</Price>
+        <Subtitle>TOTAL A PAGAR</Subtitle>
       </PriceDisplay>
       <CustomKeyboard value={value} setValue={setValue} />
       <PaymentPanel handleReceiptDisplay={handleReceiptDisplay} />

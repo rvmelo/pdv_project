@@ -1,13 +1,18 @@
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
-import {KeyboardButtonContainer, ButtonText} from '../styles/styles';
+import {
+  KeyboardButtonContainer,
+  ButtonText,
+  DeleteIcon,
+} from '../styles/styles';
 
 // import { Container } from './styles';
 
-export default function KeyboardButton({number, handleInput}) {
+function KeyboardButton({number, handleInput}) {
   return (
     <KeyboardButtonContainer onPress={handleInput}>
-      <ButtonText>{number}</ButtonText>
+      {number === -1 ? <DeleteIcon /> : <ButtonText>{number}</ButtonText>}
     </KeyboardButtonContainer>
   );
 }
+
+export default KeyboardButton;
