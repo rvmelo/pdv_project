@@ -9,7 +9,7 @@ export default function PDV() {
   const [displayReceipt, setDisplayReceipt] = useState(false);
   const [payment, setPayment] = useState({value: '0,00', option: '', date: ''});
 
-  const handleReceiptDisplay = useCallback(
+  const handleReceiptScreen = useCallback(
     option => {
       const today = new Date();
       const date =
@@ -31,16 +31,22 @@ export default function PDV() {
     [payment.value],
   );
 
+  const handlePaymentScreen = () => {
+    setDisplayReceipt(false);
+    setPayment({value: '0,00', option: '', date: ''});
+  };
+
   return displayReceipt ? (
     <ReceiptScreen
       value={payment.value}
       option={payment.option}
       date={payment.date}
+      handlePaymentScreen={handlePaymentScreen}
     />
   ) : (
     <PaymentScreen
       value={payment.value}
-      handleReceiptDisplay={handleReceiptDisplay}
+      handleReceiptScreen={handleReceiptScreen}
       setValue={setPayment}
     />
   );

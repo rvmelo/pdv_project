@@ -16,7 +16,7 @@ import ICDebit from '../../assets/Icones/ic_debit.svg';
 import ICMoney from '../../assets/Icones/ic_money.svg';
 import ICVR from '../../assets/Icones/ic_vr.svg';
 
-function PaymentPanel({handleReceiptDisplay}) {
+function PaymentPanel({handleReceiptScreen}) {
   return (
     <PanelContainer>
       <SwiperContainer>
@@ -26,7 +26,7 @@ function PaymentPanel({handleReceiptDisplay}) {
               width="30%"
               height="30%"
               onPress={() => {
-                handleReceiptDisplay('Dinheiro');
+                handleReceiptScreen('Dinheiro');
               }}
             />
             <IconTitle>DINHEIRO</IconTitle>
@@ -35,7 +35,7 @@ function PaymentPanel({handleReceiptDisplay}) {
             <ICDebit
               width="30%"
               height="30%"
-              onPress={() => handleReceiptDisplay('Débito')}
+              onPress={() => handleReceiptScreen('Débito')}
             />
             <IconTitle>DÉBITO</IconTitle>
           </IconContainer>
@@ -43,7 +43,7 @@ function PaymentPanel({handleReceiptDisplay}) {
             <ICCredit
               width="30%"
               height="30%"
-              onPress={() => handleReceiptDisplay('Crédito')}
+              onPress={() => handleReceiptScreen('Crédito')}
             />
             <IconTitle>CRÉDITO</IconTitle>
           </IconContainer>
@@ -54,7 +54,7 @@ function PaymentPanel({handleReceiptDisplay}) {
             <ICCupom
               width="30%"
               height="30%"
-              onPress={() => handleReceiptDisplay('Cupom')}
+              onPress={() => handleReceiptScreen('Cupom')}
             />
             <IconTitle>CUPOM</IconTitle>
           </IconContainer>
@@ -62,7 +62,7 @@ function PaymentPanel({handleReceiptDisplay}) {
             <ICVR
               width="30%"
               height="30%"
-              onPress={() => handleReceiptDisplay('V.R.')}
+              onPress={() => handleReceiptScreen('V.R.')}
             />
             <IconTitle>V.R.</IconTitle>
           </IconContainer>

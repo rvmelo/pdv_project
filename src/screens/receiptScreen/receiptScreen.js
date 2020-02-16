@@ -20,11 +20,16 @@ import {
   HeaderContainer,
 } from './styles/styles';
 
-export default function ReceiptScreen({value, option, date}) {
+export default function ReceiptScreen({
+  value,
+  option,
+  date,
+  handlePaymentScreen,
+}) {
   return (
     <StyledLinearGradient>
       <HeaderContainer>
-        <BackButton>
+        <BackButton onPress={handlePaymentScreen}>
           <BackImage />
         </BackButton>
         <HeaderText>PAGAMENTO REALIZADO COM SUCESSO</HeaderText>

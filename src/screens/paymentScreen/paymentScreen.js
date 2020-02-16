@@ -19,7 +19,7 @@ import {
   PaymentBackground,
 } from './styles/styles';
 
-const PaymentScreen = ({handleReceiptDisplay, value, setValue}) => {
+const PaymentScreen = ({handleReceiptScreen, value, setValue}) => {
   return (
     <PaymentBackground>
       <PriceDisplay>
@@ -27,7 +27,7 @@ const PaymentScreen = ({handleReceiptDisplay, value, setValue}) => {
         <Subtitle>TOTAL A PAGAR</Subtitle>
       </PriceDisplay>
       <CustomKeyboard value={value} setValue={setValue} />
-      <PaymentPanel handleReceiptDisplay={handleReceiptDisplay} />
+      <PaymentPanel handleReceiptScreen={handleReceiptScreen} />
     </PaymentBackground>
   );
 };
