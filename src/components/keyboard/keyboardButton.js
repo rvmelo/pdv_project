@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  KeyboardButtonContainer,
-  ButtonText,
-  DeleteIcon,
-} from '../styles/styles';
-
-// import { Container } from './styles';
+import {KeyboardButtonContainer, ButtonText, DeleteIcon} from './styles/styles';
 
 function KeyboardButton({number, handleInput}) {
   return (

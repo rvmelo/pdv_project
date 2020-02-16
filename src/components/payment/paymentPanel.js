@@ -2,19 +2,17 @@ import React, {memo} from 'react';
 
 import {
   PanelContainer,
-  OptionsContainer,
   SwiperComponent,
   SwiperContainer,
   IconContainer,
   IconTitle,
-} from '../styles/styles';
-import Swiper from 'react-native-swiper';
+} from './styles/styles';
 
-import ICCupom from '../../assets/Icones/ic_cupom.svg';
-import ICCredit from '../../assets/Icones/ic_credit.svg';
-import ICDebit from '../../assets/Icones/ic_debit.svg';
-import ICMoney from '../../assets/Icones/ic_money.svg';
-import ICVR from '../../assets/Icones/ic_vr.svg';
+import ICCupom from '../../../assets/Icones/ic_cupom.svg';
+import ICCredit from '../../../assets/Icones/ic_credit.svg';
+import ICDebit from '../../../assets/Icones/ic_debit.svg';
+import ICMoney from '../../../assets/Icones/ic_money.svg';
+import ICVR from '../../../assets/Icones/ic_vr.svg';
 
 function PaymentPanel({handleReceiptScreen}) {
   return (

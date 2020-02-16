@@ -9,21 +9,3 @@ export const PaymentBackground = styled(LinearGradient).attrs({
   align-items: center;
   background-color: purple;
 `;
-
-export const PriceDisplay = styled.View`
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const Price = styled.Text`
-  color: white;
-  font-family: ${fonts.dinCondensed.fontFamily};
-  font-size: 50px;
-`;
-
-export const Subtitle = styled.Text`
-  color: white;
-  font-family: ${fonts.dinCondensed.fontFamily};
-  font-size: 15px;
-`;

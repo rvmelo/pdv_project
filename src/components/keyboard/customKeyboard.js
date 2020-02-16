@@ -1,10 +1,10 @@
 import React, {useState, useCallback} from 'react';
-import KeyboardButton from '../components/keyboardButton';
+import KeyboardButton from './keyboardButton';
 import {
   KeyboardContainer,
   KeyboardRowContainer,
   KeyboardFillContainer,
-} from '../styles/styles';
+} from './styles/styles';
 
 export default function CustomKeyboard({value, setValue}) {
   const [cursorPosition, setCursorPosition] = useState(0);
